@@ -1,0 +1,12 @@
+<h1>Choose a New Activity and Time for Camper</h1>
+<%= form_for @signup do |f| %>
+<%= f.label :activity_id, 'Activity:' %>
+<%= f.collection_select(:activity_id, Activity.all, :id, :name) %>
+<%= f.label :camper_id, 'Camper:'%>
+<%= f.collection_select(:camper_id, Camper.all, :id, :name) %>
+<%= f.label :time %>
+<%= f.select :time, (0..24) %>
+
+<%= f.submit %>
+
+<% end %>
